@@ -1,0 +1,14 @@
+void Main()
+{
+	var clientId = "8519d3cb-e09f-4cff-aaeb-ff6165bf6e33";
+	string clientSecret = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	var authority = "https://login.microsoftonline.com/microsoft.onmicrosoft.com";
+	var resourceId = "https://microsoft.onmicrosoft.com/WebApplication1_20180723100933";
+	var context = new AuthenticationContext(authority);
+	var _clientCredential = new ClientCredential(clientId, clientSecret);
+	var authResult = context.AcquireTokenAsync(resourceId, _clientCredential).Result;
+	
+	Console.WriteLine(authResult.AccessToken);
+	
+	
+}
